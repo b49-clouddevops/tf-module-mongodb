@@ -4,6 +4,5 @@ resource "aws_docdb_cluster" "docdb" {
   engine                  = "docdb"
   master_username         = "admin1"
   master_password         = "roboshop1"
-  backup_retention_period = 
   skip_final_snapshot     = true   # terraform destroy won't ask you that do you need a backup before deletion or not
 }
