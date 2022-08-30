@@ -12,7 +12,7 @@
 # Creating Subnet Grouo 
 resource "aws_docdb_subnet_group" "docdb" {
   name       = "roboshop-${var.ENV}"
-  subnet_ids = data.terraform_remote_state.vpc.PRIVATE_SUBNET_IDS
+  subnet_ids = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
 
   tags = {
     Name = "roboshop-${var.ENV}"
