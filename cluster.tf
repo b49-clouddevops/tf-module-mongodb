@@ -1,5 +1,6 @@
+# Created Document DB : A Managed service for MongoDB
 resource "aws_docdb_cluster" "docdb" {
-  cluster_identifier      = "my-docdb-cluster"
+  cluster_identifier      = "roboshop-${var.ENV}"
   engine                  = "docdb"
   master_username         = "foo"
   master_password         = "mustbeeightchars"
