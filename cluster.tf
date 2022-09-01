@@ -6,7 +6,7 @@ resource "aws_docdb_cluster" "docdb" {
   master_password         = "roboshop1"
   skip_final_snapshot     = true   # terraform destroy won't ask you that do you need a backup before deletion or not
   db_subnet_group_name    = aws_docdb_subnet_group.docdb.name
-  vpc_security_group_ids  = aws_security_group.allow_mongodb
+  vpc_security_group_ids  = [aws_security_group.allow_mongodb.id]
 }
 
 
