@@ -12,6 +12,7 @@ resource "aws_docdb_cluster" "main" {
 }
 
 
+# Parameter Group
 resource "aws_docdb_cluster_parameter_group" "default" {
   name   = "${var.COMPONENT}-pg"
   family = var.FAMILY
