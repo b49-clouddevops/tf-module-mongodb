@@ -1,12 +1,13 @@
 # Created Document DB : A Managed service for MongoDB
 resource "aws_docdb_cluster" "main" {
-  cluster_identifier = "roboshop-${var.ENV}"
-  engine             = "docdb"
-  engine_version     = var.ENGINE_VERSION
-  master_username    = "admin1"
-  master_password    = "roboshop1"
-  skip_final_snapshot    = true
-  db_subnet_group_name   = aws_docdb_subnet_group.docdb.name
+  cluster_identifier              = "roboshop-${var.ENV}"
+  engine                          = "docdb"
+  engine_version                  = var.ENGINE_VERSION
+  master_username                 = "admin1"
+  master_password                 = "roboshop1"
+  skip_final_snapshot             = true
+  db_subnet_group_name            = aws_docdb_subnet_group.docdb.name
+  db_cluster_parameter_group_name
   vpc_security_group_ids = [aws_security_group.allow_mongodb.id]
 }
 
