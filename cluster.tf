@@ -19,7 +19,7 @@ resource "aws_docdb_subnet_group" "docdb1" {
 }
 
 # Created instances and adds to the mongodb cluster
-resource "aws_docdb_cluster_instance" "cluster_instance1" {
+resource "aws_docdb_cluster_instance" "cluster_instance-1" {
   count              = 1
   identifier         = "roboshop-${var.ENV}"
   cluster_identifier = aws_docdb_cluster.docdb1.id
