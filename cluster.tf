@@ -25,6 +25,9 @@ resource "aws_docdb_cluster_instance" "cluster_instancess" {
   identifier         = "roboshop-${var.ENV}-${count.index}"
   cluster_identifier = aws_docdb_cluster.main.id
   instance_class     = "db.t3.medium"
+  depends_on = [
+     
+  ]
 }
 
 resource "aws_security_group" "allow_mongodb" {
