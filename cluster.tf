@@ -19,7 +19,7 @@ resource "aws_docdb_subnet_group" "docdb" {
   }
 }
 
-resource "aws_docdb_cluster_instance" "cluster_instances" {
+resource "aws_docdb_cluster_instance" "cluster_instance" {
   count              = 1
   identifier         = "roboshop-${var.ENV}"
   cluster_identifier = aws_docdb_cluster.docdb.id
