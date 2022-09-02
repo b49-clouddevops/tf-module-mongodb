@@ -18,10 +18,6 @@ resource "aws_docdb_subnet_group" "docdb" {
   tags = {
     Name = "roboshop-${var.ENV}"
   }
-  depends_on = [
-     aws_docdb_cluster.main
-  ]
-
 }
 
 resource "aws_docdb_cluster_instance" "cluster_instancess" {
