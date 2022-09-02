@@ -1,7 +1,7 @@
 # Injecting the Schema
 resource "null_resource" "mongod-schema" {
   
-  depends_on  =  [aws_docdb_cluster.mysql]
+  depends_on  =  [aws_docdb_cluster.docdb]
   provisioner "local-exec" {
     command = <<EOF
     cd /tmp 
