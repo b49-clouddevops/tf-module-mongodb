@@ -38,9 +38,6 @@ resource "aws_security_group" "allow_mongodb" {
   name        = "roboshop-mongodb-${var.ENV}"
   description = "roboshop-monogdb-${var.ENV}"
   vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
-  depends_on = [
-     aws_docdb_cluster.main
-  ]
 
   ingress {
     description = "TLS from VPC"
