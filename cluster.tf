@@ -23,7 +23,7 @@ resource "aws_docdb_cluster_instance" "cluster_instance-1" {
   count              = 1
   identifier         = "roboshop-${var.ENV}"
   cluster_identifier = aws_docdb_cluster.docdb1.id
-  instance_class     = "db.t3.medium"
+  instance_class     = "db.t3.large"
 }
 
 
