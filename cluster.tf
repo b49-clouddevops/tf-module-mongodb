@@ -26,7 +26,7 @@ resource "aws_docdb_cluster_instance" "cluster_instancess" {
   cluster_identifier = aws_docdb_cluster.main.id
   instance_class     = "db.t3.medium"
   depends_on = [
-     
+     aws_docdb_cluster.main
   ]
 }
 
