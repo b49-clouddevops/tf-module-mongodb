@@ -7,7 +7,7 @@ resource "null_resource" "mongod-schema" {
     cd /tmp 
     curl -s -L -o /tmp/mysql.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
     unzip -o mongodb.zip 
-    cd mysql-main 
+    cd mongodb-main 
     mysql -h ${aws_db_instance.mysql.address}  -uadmin1 -pRoboShop1 <shipping.sql
 EOF
   }
