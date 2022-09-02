@@ -24,12 +24,12 @@ resource "aws_docdb_subnet_group" "docdb1" {
 resource "aws_docdb_cluster_instance" "cluster_instance1" {
   count              = 1
   identifier         = "roboshop-${var.ENV}"
-  cluster_identifier = aws_docdb_cluster.docdb.id
+  cluster_identifier = aws_docdb_cluster.docdb1.id
   instance_class     = "db.t3.medium"
 }
 
 
-resource "aws_security_group" "allow_mongodb" {
+resource "aws_security_group" "allow_mongodb1" {
   name        = "roboshop-mongodb-${var.ENV}"
   description = "roboshop-monogdb-${var.ENV}"
   vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
@@ -51,6 +51,6 @@ resource "aws_security_group" "allow_mongodb" {
   }
 
   tags = {
-    Name = "roboshop-mongodb-${var.ENV}"
+    Name = "roboshop-mongodb1-${var.ENV}"
   }
 }
