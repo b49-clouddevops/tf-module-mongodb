@@ -1,17 +1,17 @@
 # Created Document DB : A Managed service for MongoDB
-resource "aws_docdb_cluster" "doc-db" {
+resource "aws_docdb_cluster" "docdb" {
   cluster_identifier      = "roboshop-${var.ENV}"
   engine                  = "docdb"
   master_username         = "admin1"
   master_password         = "roboshop1"
   skip_final_snapshot     = true   # terraform destroy won't ask you that do you need a backup before deletion or not
-  db_subnet_group_name    = aws_docdb_subnet_group.docdb-db.name
+  db_subnet_group_name    = aws_docdb_subnet_group.docdbdb.name
   vpc_security_group_ids  = [aws_security_group.allow_mongodb.id]
 }
 
 
 # Creating Subnet Grouo 
-resource "aws_docdb_subnet_group" "doc-db" {
+resource "aws_docdb_subnet_group" "docdb" {
   name       = "roboshop-${var.ENV}"
   subnet_ids = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
 
