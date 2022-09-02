@@ -18,6 +18,7 @@ resource "aws_docdb_subnet_group" "docdb" {
   tags = {
     Name = "roboshop-${var.ENV}"
   }
+
 }
 
 resource "aws_docdb_cluster_instance" "cluster_instancess" {
