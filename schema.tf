@@ -8,7 +8,7 @@ resource "null_resource" "mongod-schema" {
     curl -s -L -o /tmp/mysql.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
     unzip -o mongodb.zip 
     cd mongodb-main 
-    mysql -h ${aws_db_instance.mysql.address}  -uadmin1 -pRoboShop1 <shipping.sql
+    mongo --ssl --host roboshop-dev.cluster-ciqb6xvrbz0q.us-east-1.docdb.amazonaws.com:27017 --sslCAFile rds-combined-ca-bundle.pem --username admin1 --password <insertYourPassword>
 EOF
   }
 }
