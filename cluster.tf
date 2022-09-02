@@ -11,6 +11,12 @@ resource "aws_docdb_cluster" "main" {
   vpc_security_group_ids          = [aws_security_group.allow_mongodb.id]
 }
 
+
+resource "aws_docdb_cluster_parameter_group" "default" {
+  name   = "${var.COMPONENT}-pg"
+  family = var.FAMILY
+}
+
 # Creating Subnet Group
 resource "aws_docdb_subnet_group" "docdb" {
   name       = "roboshop-${var.ENV}"
