@@ -4,5 +4,5 @@ resource "aws_route53_record" "mongo-record" {
   name    = "mongodb-${var.ENV}.${data.terraform_remote_state.vpc.outputs.HOSTEDZONE_PRIVATE_ZONE}"
   type    = "CNAME"
   ttl     = 660
-  records = [aws_docdb_cluster.main.address]
+  records = [aws_docdb_cluster.main.endpoint]
 }
