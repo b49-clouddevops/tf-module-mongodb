@@ -5,7 +5,7 @@ resource "aws_route53_record" "mongo-record" {
   type       = "CNAME"
   ttl        = 660
   records    = [aws_docdb_cluster.main.endpoint]
-  depends_on = [aws_docdb_cluster
+  depends_on = [aws_docdb_cluster.main]
      
   ]
 }
