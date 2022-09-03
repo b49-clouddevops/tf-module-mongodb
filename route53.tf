@@ -6,6 +6,4 @@ resource "aws_route53_record" "mongo-record" {
   ttl        = 660
   records    = [aws_docdb_cluster.main.endpoint]
   depends_on = [aws_docdb_cluster.main]
-     
-  ]
 }
