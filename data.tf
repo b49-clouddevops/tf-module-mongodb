@@ -20,8 +20,9 @@ data "aws_secretsmanager_secret_version" "secret" {
 
 
 # printing the dataSource 
-output "data" {
-  value = data.aws_secretsmanager_secret_version.secret
+output "example" {
+  value = jsondecode(aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_USERNAME"]
 }
 
 
+  
