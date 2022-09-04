@@ -21,7 +21,7 @@ data "aws_secretsmanager_secret_version" "secrets" {
 
 # printing the dataSource 
 output "example" {
-  value = jsondecode(aws_secretsmanager_secret_version.secrets.secret_string)["DOCDB_USERNAME"]
+  value = jsondecode(data.aws_secretsmanager_secret_version.secrets.secret_string)["DOCDB_USERNAME"]
 }
 
 
