@@ -15,7 +15,7 @@ data "aws_secretsmanager_secret" "secrets" {
 
 # Fetching the value of the secret string 
 data "aws_secretsmanager_secret_version" "secrets" {
-  secret_id     = data.aws_secretsmanager_secrets.secrets.id
+  secret_id     = data.aws_secretsmanager_secret.secrets.id
 }
 
 
