@@ -13,6 +13,7 @@ data "aws_secretsmanager_secret" "secrets" {
   name = "roboshop/secrets/all"
 }
 
+# Fetching the value of the secret string 
 data "aws_secretsmanager_secret_version" "secrets" {
   secret_id     = aws_secretsmanager_secret.secrets.id
 }
@@ -20,7 +21,7 @@ data "aws_secretsmanager_secret_version" "secrets" {
 
 # printing the dataSource 
 output "data" {
-  value = data.aws_secretsmanager_secret.secrets.id 
+  value = data.aws_secretsmanager_secret_version.secrets
 }
 
 
