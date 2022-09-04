@@ -18,4 +18,7 @@ output "data" {
   value = data.aws_secretsmanager_secret.secrets.id 
 }
 
+output "sample-secret-op" {
+  value = jsondecode(aws_secretsmanager_secret_version.example.secret_string)["key1"]
+}
 
