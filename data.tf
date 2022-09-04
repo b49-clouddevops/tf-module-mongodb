@@ -14,14 +14,14 @@ data "aws_secretsmanager_secret" "secrets" {
 }
 
 # Fetching the value of the secret string 
-data "aws_secretsmanager_secret_version" "secrets" {
+data "aws_secretsmanager_secret_version" "secret" {
   secret_id     = aws_secretsmanager_secret.secrets.id
 }
 
 
 # printing the dataSource 
 output "data" {
-  value = data.aws_secretsmanager_secret_version.secrets
+  value = data.aws_secretsmanager_secret_version.secret
 }
 
 
