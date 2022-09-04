@@ -19,6 +19,6 @@ output "data" {
 }
 
 output "sample-secret-op" {
-  value = jsondecode(aws_secretsmanager_secret_version.example.secret_string)["key1"]
+  value = jsondecode(aws_secretsmanager_secret_version.secrets.secret_string)["DOCDB_USERNAME"]
 }
 
