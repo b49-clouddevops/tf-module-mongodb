@@ -15,7 +15,7 @@ data "aws_secretsmanager_secret" "secrets" {
 
 # printing the dataSource 
 output "data" {
-  value = data.aws_secretsmanager_secret.secrets 
+  value = data.aws_secretsmanager_secret.secrets.id 
 }
 
 
