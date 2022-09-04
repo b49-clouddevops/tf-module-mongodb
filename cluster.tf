@@ -24,7 +24,7 @@ resource "aws_docdb_cluster_instance" "cluster_instancess" {
   count              = var.DOCDB_INSTACE_COUNT
   identifier         = "roboshopp-${var.ENV}-${count.index}"
   cluster_identifier = aws_docdb_cluster.main.id
-  instance_class     = "db.t3.medium"
+  instance_class     = var.DOCDB_INSTACE_CLASS
   depends_on = [
      aws_docdb_cluster.main
   ]
