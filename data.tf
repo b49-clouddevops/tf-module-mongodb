@@ -8,11 +8,12 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
-
+# fecthing the info of the secrets 
 data "aws_secretsmanager_secret" "secrets" {
   name = "roboshop/secrets/all"
 }
 
+# printing the dataSource 
 output "data" {
   value = data.aws_secretsmanager_secret.secrets 
 }
