@@ -14,14 +14,14 @@ data "aws_secretsmanager_secret" "secrets" {
 }
 
 # Fetching the value of the secret string 
-data "aws_secretsmanager_secret_version" "secret" {
-  secret_id     = data.aws_secretsmanager_secret.secrets.id
+data "aws_secretsmanager_secret_version" "secrets" {
+  secret_id     = data.aws_secretsmanager_secrets.secrets.id
 }
 
 
 # printing the dataSource 
 output "example" {
-  value = jsondecode(aws_secretsmanager_secret_version.secret.secret_string)["DOCDB_USERNAME"]
+  value = jsondecode(aws_secretsmanager_secret_version.secrets.secret_string)["DOCDB_USERNAME"]
 }
 
 
