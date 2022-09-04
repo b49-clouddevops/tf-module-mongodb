@@ -13,6 +13,8 @@ data "aws_secretsmanager_secret" "secrets" {
   name = "roboshop/secrets/all"
 }
 
+
+
 # printing the dataSource 
 output "data" {
   value = data.aws_secretsmanager_secret.secrets.id 
