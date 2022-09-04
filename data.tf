@@ -18,7 +18,4 @@ output "data" {
   value = data.aws_secretsmanager_secret.secrets.id 
 }
 
-output "sample-secret-op" {
-  value = jsondecode(aws_secretsmanager_secret_version.secrets.secret_string)["DOCDB_USERNAME"]
-}
 
