@@ -8,7 +8,7 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
-# Added th
+# Added this for that so that we can fetch the MongoDB DNS Details
 data "terraform_remote_state" "db" {
   backend = "s3"
   config = {
