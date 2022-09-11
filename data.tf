@@ -8,6 +8,16 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
+# Added th
+data "terraform_remote_state" "db" {
+  backend = "s3"
+  config = {
+    bucket = "b49-rf-remote-state-bucket"
+    key    = "databases/${var.ENV}/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 # fecthing the info of the secrets 
 data "aws_secretsmanager_secret" "secrets" {
   name = "roboshop/secrets/all"
