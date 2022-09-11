@@ -25,4 +25,7 @@ output "example" {
 }
 
 
+output "M_ENDPOINT" {
+  value = aws_docdb_cluster.docdb.endpoint
+}
   
